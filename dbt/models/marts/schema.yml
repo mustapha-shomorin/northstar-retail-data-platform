@@ -1,0 +1,150 @@
+version: 2
+
+models:
+
+  - name: dim_customer
+    columns:
+      - name: customer_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_unique_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_product
+    columns:
+      - name: product_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_seller
+    columns:
+      - name: seller_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: seller_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_geography
+    columns:
+      - name: geography_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: geolocation_zip_code_prefix
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    columns:
+      - name: date_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: full_date
+        data_tests:
+          - not_null
+          - unique
+
+  - name: fact_orders
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_key
+
+      - name: order_purchase_date_key
+        data_tests:
+          - not_null
+
+  - name: fact_order_items
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fact_orders')
+                field: order_id
+
+      - name: product_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: product_key
+
+      - name: seller_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_seller')
+                field: seller_key
+
+  - name: fact_payments
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fact_orders')
+                field: order_id
+
+      - name: payment_sequential
+        data_tests:
+          - not_null
+
+  - name: mart_sales_daily
+    columns:
+      - name: date_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: full_date
+        data_tests:
+          - not_null
+          - unique
+
+      - name: daily_revenue
+        data_tests:
+          - not_null
+
+      - name: daily_orders
+        data_tests:
+          - not_null
+
+      - name: rolling_7d_revenue
+        data_tests:
+          - not_null
+
+      - name: rolling_7d_orders
+        data_tests:
+          - not_null

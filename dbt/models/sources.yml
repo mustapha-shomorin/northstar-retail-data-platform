@@ -1,0 +1,56 @@
+version: 2
+
+sources:
+  - name: silver
+    description: "NorthStar Silver layer stored as Parquet files."
+
+    meta:
+      layer: silver
+      storage_format: parquet
+
+    tables:
+
+      - name: customers
+        description: "Cleaned customer records from the Olist dataset."
+        meta:
+          parquet_path: "data/silver/customers/data.parquet"
+
+      - name: sellers
+        description: "Cleaned seller records from the Olist dataset."
+        meta:
+          parquet_path: "data/silver/sellers/data.parquet"
+
+      - name: products
+        description: "Cleaned product records from the Olist dataset."
+        meta:
+          parquet_path: "data/silver/products/data.parquet"
+
+      - name: orders
+        description: "Cleaned order records from the Olist dataset."
+        meta:
+          parquet_path: "data/silver/orders/data.parquet"
+
+      - name: order_items
+        description: "Cleaned order-item records from the Olist dataset."
+        meta:
+          parquet_path: "data/silver/order_items/data.parquet"
+
+      - name: order_payments
+        description: "Cleaned order-payment records from the Olist dataset."
+        meta:
+          parquet_path: "data/silver/order_payments/data.parquet"
+
+      - name: order_reviews
+        description: "Cleaned order-review records from the Olist dataset."
+        meta:
+          parquet_path: "data/silver/order_reviews/data.parquet"
+
+      - name: geolocation
+        description: "Cleaned Brazilian ZIP-code geolocation records."
+        meta:
+          parquet_path: "data/silver/geolocation/data.parquet"
+
+      - name: order_events
+        description: "Cleaned streaming order and customer events."
+        meta:
+          parquet_path: "data/silver/order_events/data.parquet"

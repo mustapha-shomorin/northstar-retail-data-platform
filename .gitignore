@@ -1,0 +1,70 @@
+﻿# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+logs/
+*.log
+
+# Local databases
+*.duckdb
+*.duckdb.wal
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated data
+data/bronze/
+data/silver/
+data/gold/
+
+# Airflow
+airflow.cfg
+airflow.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Raw source datasets
+data/source/
+
+# Local DuckDB databases
+*.duckdb
+*.duckdb.wal
+
+# dbt generated artifacts
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+
+
+# Unused starter project
+DuckDB/
+
+# Demo recordings - keep large local video out of Git
+docs/demo/*.mkv
+docs/demo/*.png
+.*pdf
+
+infrastructure/airflow/dbt_profiles/*.yml

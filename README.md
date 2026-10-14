@@ -43,7 +43,7 @@ The platform is developed locally using a combination of Python, SQL, Docker Com
 
 The Streamlit dashboard presents NorthStar Retail's analytical outputs through an interactive business-facing interface.
 
-![NorthStar Retail Dashboard](docs/demo/dashboard.png)
+![NorthStar Retail Dashboard](docs/screenshots/dashboard.png)
 
 ### Workflow Orchestration — Apache Airflow
 

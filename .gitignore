@@ -64,7 +64,7 @@ DuckDB/
 
 # Demo recordings - keep large local video out of Git
 docs/demo/*.mkv
-docs/demo/*.png
-.*pdf
+
+data_engineering_capstone_project.pdf
 
 infrastructure/airflow/dbt_profiles/*.yml

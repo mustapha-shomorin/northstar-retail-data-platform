@@ -49,13 +49,13 @@ The Streamlit dashboard presents NorthStar Retail's analytical outputs through a
 
 The Airflow interface provides visibility into the orchestration of the platform's data pipeline workflows.
 
-![Airflow Pipeline Orchestration](docs/screenshots/airflow_orchestration.png)
+![Airflow Pipeline Orchestration](docs/screenshots/airflow_orchestration.PNG)
 
 ### Monitoring and Observability — Grafana
 
 Grafana provides a monitoring interface for inspecting metrics and observing the status of the local data platform.
 
-![NorthStar Retail Grafana Monitoring](docs/screenshots/grafana.png)
+![NorthStar Retail Grafana Monitoring](docs/screenshots/grafana.PNG)
 
 ## Dashboard Demonstration
 
